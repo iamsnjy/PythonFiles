@@ -1,12 +1,4 @@
 
-#just practice : upper/lower count,frequency of chars/words/consecutive frequency,palindrome
-#more practice : roman,pw,rotation,all substring,permutation,bubblr_sort,count of overlapping substring occurence.
-
-"""map,filter,reduce,lambda,enumerate,zip,range,
-"""
-
-
-
 def permutation_string(s):
     if len(s)==1:
         return s
