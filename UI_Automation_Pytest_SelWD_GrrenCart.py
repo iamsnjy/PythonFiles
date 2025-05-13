@@ -2,12 +2,21 @@ import pytest
 from selenium import webdriver
 import time
 
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+
+@pytest.fixture
+def headless_run_fixture():
+    chro_opt=webdriver.ChromeOptions()
+    chro_opt.add_argument("--headless--")
+    yield chro_opt
+
 
 
 @pytest.fixture
-def setup_teardown():
-    driver=webdriver.Chrome()
+def setup_teardown(headless_run_fixture):
+    chro_opt=headless_run_fixture
+    driver=webdriver.Chrome(options=chro_opt)
     driver.implicitly_wait(5)
     driver.get('https://rahulshettyacademy.com/seleniumPractise/#/')
     driver.fullscreen_window()
