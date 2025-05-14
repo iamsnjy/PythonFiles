@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 @pytest.fixture
 def headless_run_fixture():
     chro_opt=webdriver.ChromeOptions()
-    chro_opt.add_argument("--headless--")
+    chro_opt.add_argument("--headless")
     yield chro_opt
 
 
